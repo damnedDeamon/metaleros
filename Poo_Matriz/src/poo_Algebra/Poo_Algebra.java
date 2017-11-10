@@ -24,17 +24,17 @@ public class Poo_Algebra {
             entregar estadísticas, tales como:
         ▪ Cantidad de figuras ingresadas, mostrando un contador por cada una de ellas.
          */
-        
+
         System.out.println("====================================");
         System.out.println("  BIENVENIDO AL SISTEMA DE FIGURAS");
         System.out.println("====================================");
-        
+
         String[][] matriz = new String[10][10];
-        
-        for(int i = 0; i< matriz.length; i++){
+
+        for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = " -"; 
-                
+                matriz[i][j] = " -";
+
             }
         }
         System.out.print("f/c ");
@@ -66,25 +66,51 @@ public class Poo_Algebra {
             }
             System.out.println(); // enter
         }
-        
-        
+
         System.out.println("====================================");
         System.out.println("Segon la matriz que muestra el sistema");
         System.out.println("usted debe ingresar los pontos de su");
         System.out.println("figura.");
         System.out.println("Ejemplo: 0,0 - 4,0 - 0,4 - 4,4");
         System.out.println("====================================");
-        
+
         Scanner leer = new Scanner(System.in);
-        
+
         System.out.println("Reglas ");
         System.out.println("Solamente puede ingresar 3 0 4 coordenadas");
         System.out.println();
-        System.out.println("¿Cuantos puntos decea ingresar?");
-        
+        System.out.print("¿Cuantos puntos decea ingresar?");
+
         int op = Integer.parseInt(leer.nextLine());
+
+        if (op == 3) {
+            for (int i = 1; i <= op; i++) {
+                System.out.print("Ingrese fila y columna "+i+": ");
+                String coordenada_1 = leer.nextLine();
+                String[] posicion_1 = coordenada_1.split(",");
+
+                String fila_1 = posicion_1[0];
+                String columna_1 = posicion_1[1];
+
+                int fila = Integer.parseInt(fila_1);
+                int columna = Integer.parseInt(columna_1);
+            }
+
+        }else if (op == 4) {
+            for (int i = 1; i <= op; i++) {
+                System.out.print("Ingrese fila y columna "+i+": ");
+                String coordenada_2 = leer.nextLine();
+                String[] posicion_2 = coordenada_2.split(",");
+
+                String fila_2 = posicion_2[0];
+                String columna_2 = posicion_2[1];
+
+                int fil = Integer.parseInt(fila_2);
+                int colum = Integer.parseInt(columna_2);
+            }
+        }
         
-                
+
     }
 
 }
