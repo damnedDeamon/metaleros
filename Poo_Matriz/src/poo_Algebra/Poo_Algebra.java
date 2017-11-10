@@ -66,20 +66,20 @@ public class Poo_Algebra {
             }
             System.out.println(); // enter
         }
+        
 
         System.out.println("====================================");
-        System.out.println("Segon la matriz que muestra el sistema");
-        System.out.println("usted debe ingresar los pontos de su");
-        System.out.println("figura.");
+        System.out.println("Segun la matriz que muestra el sistema usted");
+        System.out.println("debe ingresar los puntos de su figura.");
         System.out.println("Ejemplo: 0,0 - 4,0 - 0,4 - 4,4");
         System.out.println("====================================");
 
         Scanner leer = new Scanner(System.in);
 
         System.out.println("Reglas ");
-        System.out.println("Solamente puede ingresar 3 0 4 coordenadas");
+        System.out.println("Solamente puede ingresar 3 o 4 coordenadas");
         System.out.println();
-        System.out.print("¿Cuantos puntos decea ingresar?");
+        System.out.print("¿Cuantos puntos desea ingresar?");
 
         int op = Integer.parseInt(leer.nextLine());
 
@@ -94,7 +94,44 @@ public class Poo_Algebra {
 
                 int fila = Integer.parseInt(fila_1);
                 int columna = Integer.parseInt(columna_1);
+                for (int f = 0; f < matriz.length; f++) {
+                    for (int c = 0; c < matriz[f].length; c++) {
+                        if(f == fila && c == columna){
+                            matriz[f][c] = " x";
+                        }
+                    }
+                }
+                
             }
+            System.out.print("f/c ");
+        for (int f = 0; f < matriz[0].length; f++) {
+
+            // if dejar de poner 0
+            if (f >= 10) {
+                System.out.print(f + "  ");
+            } else {
+                System.out.print(0);
+                System.out.print(f + "  ");
+            }
+        }
+        System.out.println(); // enter
+
+        // ciclo para las filas de numeros
+        for (int f = 0; f < matriz.length; f++) {
+
+            // if dejar de poner 0 y mostrar la columna de numeros
+            if (f >= 10) {
+                System.out.print(f);
+            } else {
+                System.out.print(0);
+                System.out.print(f);
+            }
+            // ciclo para las filas de numeros
+            for (int c = 0; c < matriz[f].length; c++) {
+                System.out.print(" " + matriz[f][c] + " ");
+            }
+            System.out.println(); // enter
+        }
 
         }else if (op == 4) {
             for (int i = 1; i <= op; i++) {
@@ -110,7 +147,8 @@ public class Poo_Algebra {
             }
         }
         
-
+        
     }
+    
 
 }
