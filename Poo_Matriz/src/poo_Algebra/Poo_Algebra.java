@@ -66,7 +66,6 @@ public class Poo_Algebra {
             }
             System.out.println(); // enter
         }
-        
 
         System.out.println("====================================");
         System.out.println("Segun la matriz que muestra el sistema usted");
@@ -85,7 +84,7 @@ public class Poo_Algebra {
 
         if (op == 3) {
             for (int i = 1; i <= op; i++) {
-                System.out.print("Ingrese fila y columna "+i+": ");
+                System.out.print("Ingrese fila y columna " + i + ": ");
                 String coordenada_1 = leer.nextLine();
                 String[] posicion_1 = coordenada_1.split(",");
 
@@ -96,26 +95,61 @@ public class Poo_Algebra {
                 int columna = Integer.parseInt(columna_1);
                 for (int f = 0; f < matriz.length; f++) {
                     for (int c = 0; c < matriz[f].length; c++) {
-                        if(f == fila && c == columna){
+                        if (f == fila && c == columna) {
                             matriz[f][c] = " x";
                         }
                     }
                 }
-                
+
             }
             System.out.print("f/c ");
-        for (int f = 0; f < matriz[0].length; f++) {
+            for (int f = 0; f < matriz[0].length; f++) {
 
-            // if dejar de poner 0
-            if (f >= 10) {
-                System.out.print(f + "  ");
-            } else {
-                System.out.print(0);
-                System.out.print(f + "  ");
+                // if dejar de poner 0
+                if (f >= 10) {
+                    System.out.print(f + "  ");
+                } else {
+                    System.out.print(0);
+                    System.out.print(f + "  ");
+                }
             }
-        }
-        System.out.println(); // enter
+            System.out.println(); // enter
 
+            // ciclo para las filas de numeros
+            for (int f = 0; f < matriz.length; f++) {
+
+                // if dejar de poner 0 y mostrar la columna de numeros
+                if (f >= 10) {
+                    System.out.print(f);
+                } else {
+                    System.out.print(0);
+                    System.out.print(f);
+                }
+                // ciclo para las filas de numeros
+                for (int c = 0; c < matriz[f].length; c++) {
+                    System.out.print(" " + matriz[f][c] + " ");
+                }
+                System.out.println(); // enter
+            }
+
+        } else if (op == 4) {
+            for (int i = 1; i <= op; i++) {
+                System.out.print("Ingrese fila y columna " + i + ": ");
+                String coordenada_2 = leer.nextLine();
+                String[] posicion_2 = coordenada_2.split(",");
+
+                String fila_2 = posicion_2[0];
+                String columna_2 = posicion_2[1];
+
+                int fil = Integer.parseInt(fila_2);
+                int colum = Integer.parseInt(columna_2);
+
+                System.out.print(matriz[fil][colum] = " X");
+
+            }
+
+        }
+        System.out.println("f/c ");
         // ciclo para las filas de numeros
         for (int f = 0; f < matriz.length; f++) {
 
@@ -126,6 +160,7 @@ public class Poo_Algebra {
                 System.out.print(0);
                 System.out.print(f);
             }
+
             // ciclo para las filas de numeros
             for (int c = 0; c < matriz[f].length; c++) {
                 System.out.print(" " + matriz[f][c] + " ");
@@ -133,22 +168,6 @@ public class Poo_Algebra {
             System.out.println(); // enter
         }
 
-        }else if (op == 4) {
-            for (int i = 1; i <= op; i++) {
-                System.out.print("Ingrese fila y columna "+i+": ");
-                String coordenada_2 = leer.nextLine();
-                String[] posicion_2 = coordenada_2.split(",");
-
-                String fila_2 = posicion_2[0];
-                String columna_2 = posicion_2[1];
-
-                int fil = Integer.parseInt(fila_2);
-                int colum = Integer.parseInt(columna_2);
-            }
-        }
-        
-        
     }
-    
 
 }
