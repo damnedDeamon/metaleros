@@ -167,6 +167,7 @@ public class Poo_Algebra {
             }
             System.out.println(); // enter
         }
+        
 
     }
 
