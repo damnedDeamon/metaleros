@@ -86,6 +86,20 @@ public class Poo_Algebra {
             int op = Integer.parseInt(leer.nextLine());
             System.out.println();
 
+            if (op < 3) {
+                System.err.print("[ERROR]");
+                System.out.print("Cuantos puntos desea ingresar: ");
+
+                op = Integer.parseInt(leer.nextLine());
+            }
+
+            if (op > 4) {
+                System.err.print("[ERROR]");
+                System.out.print("Cuantos puntos desea ingresar: ");
+
+                op = Integer.parseInt(leer.nextLine());
+            }
+
             if (op == 3) {
                 for (int i = 1; i <= op; i++) {
                     System.out.print("Ingrese fila y columna " + i + ": ");
@@ -130,6 +144,7 @@ public class Poo_Algebra {
                         System.out.print(" " + matriz[f][c] + " ");
                     }
                     System.out.println(); // enter
+
                 }
 
             } else if (op == 4) {
@@ -181,7 +196,6 @@ public class Poo_Algebra {
             }
 
         }
-
     }
 
 }
