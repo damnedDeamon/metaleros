@@ -85,16 +85,7 @@ public class Poo_Algebra {
 
             int op = Integer.parseInt(leer.nextLine());
             System.out.println();
-
-            if (op < 3) {
-                System.err.print("[ERROR]");
-                System.out.print("Cuantos puntos desea ingresar: ");
-
-                op = Integer.parseInt(leer.nextLine());
-            }
-
-            if (op > 4) {
-                System.err.print("[ERROR]");
+            while (op < 3 || op > 4) {
                 System.out.print("Cuantos puntos desea ingresar: ");
 
                 op = Integer.parseInt(leer.nextLine());
