@@ -31,7 +31,7 @@ public class Poo_Algebra {
         System.out.println("  BIENVENIDO AL SISTEMA DE FIGURAS");
         System.out.println("====================================");
 
-        String[][] matriz = new String[10][10];
+        String[][] matriz = new String[20][20];
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
