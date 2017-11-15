@@ -137,7 +137,7 @@ public class Poo_Algebra {
                 matriz[fil_3][colum_3] = " X";
                 
                 Triangulo t = new Triangulo(fil_1, fil_2, colum_1, colum_2, fil_3, colum_3);
-                t.equilatero();
+                t.calculoTriangulo();
                 
                 System.out.println();
                 System.out.print("f/c ");
