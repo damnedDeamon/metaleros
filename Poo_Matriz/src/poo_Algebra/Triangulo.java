@@ -28,7 +28,7 @@ public class Triangulo {
 
         suma_1 = potencia_1 + potencia_2;
 
-        raiz_cuadrada = Math.round(suma_1);
+        raiz_cuadrada = Math.sqrt(suma_1);
 
         double rest_1, rest_2, sum_1;
         double mul_1, mul_2, raiz_cuad = 0;
@@ -41,7 +41,7 @@ public class Triangulo {
 
         sum_1 = mul_1 + mul_2;
 
-        raiz_cuad = Math.round(sum_1);
+        raiz_cuad = Math.sqrt(sum_1);
 
         double res_1, resta, su_1;
         double mu_1, mu_2 = 0, raiz = 0;
@@ -53,26 +53,26 @@ public class Triangulo {
         mul_2 = resta * resta;
 
         su_1 = mu_1 + mu_2;
-        raiz = Math.round(su_1);
+        raiz = Math.sqrt(su_1);
 
-        while (true) {
-            if (raiz_cuadrada > raiz) {
-                raiz_cuadrada--;
-            } else if (raiz_cuadrada == raiz) {
-                break;
-            }
-        }
+        int absoluto_1 = (int) Math.abs(raiz_cuadrada);
+        int absoluto_2 = (int) Math.abs(raiz_cuad);
+        int absoluto_3 = (int) Math.abs(raiz);
 
-        System.out.println("Valor del punto 1 y 2: " + raiz_cuadrada);
-        System.out.println("Valor del punto 2 y 3: " + raiz_cuad);
-        System.out.println("Valor del punto 3 y 1: " + raiz);
-        if (raiz_cuadrada == raiz && raiz == raiz_cuad) {
-            System.out.println("Equilatero");
+        System.out.println("Valor del punto 1 y 2: " + absoluto_1);
+        System.out.println("Valor del punto 2 y 3: " + absoluto_2);
+        System.out.println("Valor del punto 3 y 1: " + absoluto_3);
+        if (absoluto_1 == absoluto_2 && absoluto_2 == absoluto_3) {
             System.out.println();
+            System.out.println("Equilatero");
+
+        } else if (absoluto_1 == absoluto_2 || absoluto_2 == absoluto_3 || absoluto_1 == absoluto_3) {
+            System.out.println();
+            System.out.println("Isosceles");
+
+        } else if (absoluto_1 != absoluto_2 && absoluto_2 != absoluto_3 && absoluto_1 != absoluto_3) {
+            System.out.println();
+            System.out.println("Escaleno");
         }
-    }
-
-    public void isoseles() {
-
     }
 }
