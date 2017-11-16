@@ -55,7 +55,29 @@ public class Triangulo {
         mul_2 = resta * resta;
 
         su_1 = mu_1 + mu_2;
-        raiz = Math.sqrt(su_1);
+        raiz = Math.sqrt(su_1); 
+        
+        /*
+        int absoluto_1 = (int) Math.abs(raiz_cuadrada);
+        int absoluto_2 = (int) Math.abs(raiz_cuad);
+        int absoluto_3 = (int) Math.abs(raiz);
+
+        System.out.println("Valor del punto 1 y 2: " + absoluto_1);
+        System.out.println("Valor del punto 2 y 3: " + absoluto_2);
+        System.out.println("Valor del punto 3 y 1: " + absoluto_3);
+        if (absoluto_1 == absoluto_2 && absoluto_2 == absoluto_3) {
+            System.out.println();
+            System.out.println("Equilatero");
+
+        } else if (absoluto_1 == absoluto_2 || absoluto_2 == absoluto_3 || absoluto_1 == absoluto_3) {
+            System.out.println();
+            System.out.println("Isosceles");
+
+        } else if (absoluto_1 != absoluto_2 && absoluto_2 != absoluto_3 && absoluto_1 != absoluto_3) {
+            System.out.println();
+            System.out.println("Escaleno");
+        }
+        */
         
         int absoluto_1 = (int) Math.abs(raiz_cuadrada);
         int absoluto_2 = (int) Math.abs(raiz_cuad);
