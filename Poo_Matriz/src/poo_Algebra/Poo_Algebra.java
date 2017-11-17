@@ -25,8 +25,28 @@ public class Poo_Algebra {
         ▪ Cantidad de figuras ingresadas, mostrando un contador por cada una de ellas.
          */
 
-        int opcion;
+        int opcion = 0;
         int op;
+        int cont = 0;
+
+        int fil_1;
+        int colum_1;
+        int fil_2;
+        int colum_2;
+        int fil_3;
+        int colum_3;
+
+        int fi_1;
+        int co_1;
+        int fi_2;
+        int co_2;
+        int fi_3;
+        int co_3;
+        int fi_4;
+        int co_4;
+
+        Scanner leer;
+        leer = new Scanner(System.in);
         System.out.println("====================================");
         System.out.println("  BIENVENIDO AL SISTEMA DE FIGURAS");
         System.out.println("====================================");
@@ -74,14 +94,23 @@ public class Poo_Algebra {
         System.out.println("debe ingresar los puntos de su figura.");
         System.out.println("Ejemplo: 0,0 - 4,0 - 0,4 - 4,4");
         System.out.println("====================================");
+        while (true) {
+            try {
+                System.out.print("Cuantas figuras desea ingresar: ");
+                opcion = Integer.parseInt(leer.nextLine());
 
-        Scanner leer = new Scanner(System.in);
-        int cont = 0;
-        System.out.print("Cuantas figuras desea ingresar: ");
-        opcion = Integer.parseInt(leer.nextLine());
+                if (opcion <= 0) {
+                    System.err.println("Ingrese solo numeros positivos");
+
+                } else if (opcion >= 1) {
+                    break;
+                }
+            } catch (Exception e) {
+                System.err.println("Ingrese solo numeros");
+            }
+        }
 
         while (true) {
-
             if (opcion == cont) {
                 break;
             }
@@ -90,52 +119,80 @@ public class Poo_Algebra {
             System.out.println("Solamente puede ingresar 3 o 4 coordenadas");
             System.out.println("============================================");
             while (true) {
-                cont++;
-                System.out.print("Cuantos puntos desea ingresar: ");
-                op = Integer.parseInt(leer.nextLine());
-                if (op == 3 || op == 4) {
-                    break;
-                } else if (op != 3 || op != 4) {
-                    System.err.println("Error de opcion!!");
+                try {
+                    cont++;
+                    System.out.print("Cuantos puntos desea ingresar: ");
+                    op = Integer.parseInt(leer.nextLine());
+                    if (op == 3 || op == 4) {
+                        break;
+                    } else if (op != 3 || op != 4) {
+                        System.err.println("Error de opcion ingrese(3 o 4)!");
+                    }
+                } catch (Exception e) {
+                    System.err.println("Ingrese solo numeros");
+
                 }
             }
 
             if (op == 3) {
-                System.out.print("Ingrese fila y columna 1: ");
-                String coordenada_1 = leer.nextLine();
-                String[] posicion_1 = coordenada_1.split(",");
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 1: ");
+                        String coordenada_1 = leer.nextLine();
+                        String[] posicion_1 = coordenada_1.split(",");
 
-                String fila_1 = posicion_1[0];
-                String columna_1 = posicion_1[1];
+                        String fila_1 = posicion_1[0];
+                        String columna_1 = posicion_1[1];
 
-                int fil_1 = Integer.parseInt(fila_1);
-                int colum_1 = Integer.parseInt(columna_1);
+                        fil_1 = Integer.parseInt(fila_1);
+                        colum_1 = Integer.parseInt(columna_1);
 
-                matriz[fil_1][colum_1] = " X";
+                        matriz[fil_1][colum_1] = " X";
+                        break;
 
-                System.out.print("Ingrese fila y columna 2: ");
-                String coordenada_2 = leer.nextLine();
-                String[] posicion_2 = coordenada_2.split(",");
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
+                }
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 2: ");
+                        String coordenada_2 = leer.nextLine();
 
-                String fila_2 = posicion_2[0];
-                String columna_2 = posicion_2[1];
+                        String[] posicion_2 = coordenada_2.split(",");
 
-                int fil_2 = Integer.parseInt(fila_2);
-                int colum_2 = Integer.parseInt(columna_2);
+                        String fila_2 = posicion_2[0];
+                        String columna_2 = posicion_2[1];
 
-                matriz[fil_2][colum_2] = " X";
+                        fil_2 = Integer.parseInt(fila_2);
+                        colum_2 = Integer.parseInt(columna_2);
 
-                System.out.print("Ingrese fila y columna 3: ");
-                String coordenada_3 = leer.nextLine();
-                String[] posicion_3 = coordenada_3.split(",");
+                        matriz[fil_2][colum_2] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
 
-                String fila_3 = posicion_3[0];
-                String columna_3 = posicion_3[1];
+                }
 
-                int fil_3 = Integer.parseInt(fila_3);
-                int colum_3 = Integer.parseInt(columna_3);
-                matriz[fil_3][colum_3] = " X";
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 3: ");
+                        String coordenada_3 = leer.nextLine();
+                        String[] posicion_3 = coordenada_3.split(",");
 
+                        String fila_3 = posicion_3[0];
+                        String columna_3 = posicion_3[1];
+
+                        fil_3 = Integer.parseInt(fila_3);
+                        colum_3 = Integer.parseInt(columna_3);
+
+                        matriz[fil_3][colum_3] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
+                }
                 Triangulo t = new Triangulo(fil_1, fil_2, colum_1, colum_2, fil_3, colum_3);
                 t.calculoTriangulo();
 
@@ -165,55 +222,80 @@ public class Poo_Algebra {
                 }
 
             } else if (op == 4) {
-                System.out.print("Ingrese fila  y columna 1: ");
-                String coor_1 = leer.nextLine();
-                String[] pos_1 = coor_1.split(",");
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila  y columna 1: ");
+                        String coor_1 = leer.nextLine();
+                        String[] pos_1 = coor_1.split(",");
 
-                String f_1 = pos_1[0];
-                String c_1 = pos_1[1];
+                        String f_1 = pos_1[0];
+                        String c_1 = pos_1[1];
 
-                int fila_1 = Integer.parseInt(f_1);
-                int columna_1 = Integer.parseInt(c_1);
+                        fi_1 = Integer.parseInt(f_1);
+                        co_1 = Integer.parseInt(c_1);
 
-                matriz[fila_1][columna_1] = " X";
+                        matriz[fi_1][co_1] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
+                }
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 2: ");
+                        String coor_2 = leer.nextLine();
+                        String[] pos_2 = coor_2.split(",");
 
-                System.out.print("Ingrese fila y columna 2: ");
-                String coor_2 = leer.nextLine();
-                String[] pos_2 = coor_2.split(",");
+                        String f_2 = pos_2[0];
+                        String c_2 = pos_2[1];
 
-                String f_2 = pos_2[0];
-                String c_2 = pos_2[1];
+                        fi_2 = Integer.parseInt(f_2);
+                        co_2 = Integer.parseInt(c_2);
 
-                int fila_2 = Integer.parseInt(f_2);
-                int columna_2 = Integer.parseInt(c_2);
+                        matriz[fi_2][co_2] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
+                }
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 3: ");
+                        String coor_3 = leer.nextLine();
+                        String[] pos_3 = coor_3.split(",");
 
-                matriz[fila_2][columna_2] = " X";
+                        String f_3 = pos_3[0];
+                        String c_3 = pos_3[1];
 
-                System.out.print("Ingrese fila y columna 3: ");
-                String coor_3 = leer.nextLine();
-                String[] pos_3 = coor_3.split(",");
+                        fi_3 = Integer.parseInt(f_3);
+                        co_3 = Integer.parseInt(c_3);
 
-                String f_3 = pos_3[0];
-                String c_3 = pos_3[1];
+                        matriz[fi_3][co_3] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
+                }
+                while (true) {
+                    try {
+                        System.out.print("Ingrese fila y columna 4: ");
+                        String coor_4 = leer.nextLine();
+                        String[] pos_4 = coor_4.split(",");
 
-                int fila_3 = Integer.parseInt(f_3);
-                int columna_3 = Integer.parseInt(c_3);
+                        String f_4 = pos_4[0];
+                        String c_4 = pos_4[1];
 
-                matriz[fila_3][columna_3] = " X";
+                        fi_4 = Integer.parseInt(f_4);
+                        co_4 = Integer.parseInt(c_4);
 
-                System.out.print("Ingrese fila y columna 4: ");
-                String coor_4 = leer.nextLine();
-                String[] pos_4 = coor_4.split(",");
+                        matriz[fi_4][co_4] = " X";
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
+                    }
 
-                String f_4 = pos_4[0];
-                String c_4 = pos_4[1];
-
-                int fila_4 = Integer.parseInt(f_4);
-                int columna_4 = Integer.parseInt(c_4);
-
-                matriz[fila_4][columna_4] = " X";
-
-                Paralelógramo p = new Paralelógramo(fila_1, fila_2, columna_1, columna_2, fila_3, columna_3, fila_4, columna_4);
+                }
+                Paralelógramo p = new Paralelógramo(fi_1, fi_2, co_1, co_2, fi_3, co_3, fi_4, co_4);
                 p.calculoPararelogramo();
 
                 System.out.println();
