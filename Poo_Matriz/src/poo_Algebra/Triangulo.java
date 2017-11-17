@@ -14,21 +14,19 @@ public class Triangulo {
         this.colum_2 = colum_2;
         this.colum_3 = colum_3;
     }
-    public void verificacion(){
-        
-    }
+    
     public void calculoTriangulo() {
         // Calculo de las figuras
         double resta_1, resta_2, suma_1;
-        double multi_1, multi_2, raiz_cuadrada = 0, potencia_1, potencia_2, exponente = 2;
+        double multi_1, multi_2,raiz_cuadrada = 0;
 
         resta_1 = fil_1 - fil_2;
         resta_2 = colum_1 - colum_2;
 
-        potencia_1 = Math.pow(resta_1, exponente);
-        potencia_2 = Math.pow(resta_2, exponente);
+        multi_1 = resta_1 * resta_1;
+        multi_2 = resta_2 * resta_2;
 
-        suma_1 = potencia_1 + potencia_2;
+        suma_1 = multi_1 + multi_2;
 
         raiz_cuadrada = Math.sqrt(suma_1);
 
@@ -57,27 +55,7 @@ public class Triangulo {
         su_1 = mu_1 + mu_2;
         raiz = Math.sqrt(su_1); 
         
-        /*
-        int absoluto_1 = (int) Math.abs(raiz_cuadrada);
-        int absoluto_2 = (int) Math.abs(raiz_cuad);
-        int absoluto_3 = (int) Math.abs(raiz);
-
-        System.out.println("Valor del punto 1 y 2: " + absoluto_1);
-        System.out.println("Valor del punto 2 y 3: " + absoluto_2);
-        System.out.println("Valor del punto 3 y 1: " + absoluto_3);
-        if (absoluto_1 == absoluto_2 && absoluto_2 == absoluto_3) {
-            System.out.println();
-            System.out.println("Equilatero");
-
-        } else if (absoluto_1 == absoluto_2 || absoluto_2 == absoluto_3 || absoluto_1 == absoluto_3) {
-            System.out.println();
-            System.out.println("Isosceles");
-
-        } else if (absoluto_1 != absoluto_2 && absoluto_2 != absoluto_3 && absoluto_1 != absoluto_3) {
-            System.out.println();
-            System.out.println("Escaleno");
-        }
-        */
+        
         
         int absoluto_1 = (int) Math.abs(raiz_cuadrada);
         int absoluto_2 = (int) Math.abs(raiz_cuad);

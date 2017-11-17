@@ -79,7 +79,7 @@ public class Poo_Algebra {
         int cont = 0;
         System.out.print("Cuantas figuras desea ingresar: ");
         opcion = Integer.parseInt(leer.nextLine());
-        
+
         while (true) {
 
             if (opcion == cont) {
@@ -135,10 +135,10 @@ public class Poo_Algebra {
                 int fil_3 = Integer.parseInt(fila_3);
                 int colum_3 = Integer.parseInt(columna_3);
                 matriz[fil_3][colum_3] = " X";
-                
+
                 Triangulo t = new Triangulo(fil_1, fil_2, colum_1, colum_2, fil_3, colum_3);
                 t.calculoTriangulo();
-                
+
                 System.out.println();
                 System.out.print("f/c ");
                 for (int f = 0; f < matriz[0].length; f++) {
@@ -165,20 +165,57 @@ public class Poo_Algebra {
                 }
 
             } else if (op == 4) {
-                for (int i = 1; i <= op; i++) {
-                    System.out.print("Ingrese fila y columna " + i + ": ");
-                    String coordenada_2 = leer.nextLine();
-                    String[] posicion_2 = coordenada_2.split(",");
+                System.out.print("Ingrese fila  y columna 1: ");
+                String coor_1 = leer.nextLine();
+                String[] pos_1 = coor_1.split(",");
 
-                    String fila_2 = posicion_2[0];
-                    String columna_2 = posicion_2[1];
+                String f_1 = pos_1[0];
+                String c_1 = pos_1[1];
 
-                    int fil = Integer.parseInt(fila_2);
-                    int colum = Integer.parseInt(columna_2);
+                int fila_1 = Integer.parseInt(f_1);
+                int columna_1 = Integer.parseInt(c_1);
 
-                    matriz[fil][colum] = " X";
+                matriz[fila_1][columna_1] = " X";
 
-                }
+                System.out.print("Ingrese fila y columna 2: ");
+                String coor_2 = leer.nextLine();
+                String[] pos_2 = coor_2.split(",");
+
+                String f_2 = pos_2[0];
+                String c_2 = pos_2[1];
+
+                int fila_2 = Integer.parseInt(f_2);
+                int columna_2 = Integer.parseInt(c_2);
+
+                matriz[fila_2][columna_2] = " X";
+
+                System.out.print("Ingrese fila y columna 3: ");
+                String coor_3 = leer.nextLine();
+                String[] pos_3 = coor_3.split(",");
+
+                String f_3 = pos_3[0];
+                String c_3 = pos_3[1];
+
+                int fila_3 = Integer.parseInt(f_3);
+                int columna_3 = Integer.parseInt(c_3);
+
+                matriz[fila_3][columna_3] = " X";
+
+                System.out.print("Ingrese fila y columna 4: ");
+                String coor_4 = leer.nextLine();
+                String[] pos_4 = coor_4.split(",");
+
+                String f_4 = pos_4[0];
+                String c_4 = pos_4[1];
+
+                int fila_4 = Integer.parseInt(f_4);
+                int columna_4 = Integer.parseInt(c_4);
+
+                matriz[fila_4][columna_4] = " X";
+
+                Paralelógramo p = new Paralelógramo(fila_1, fila_2, columna_1, columna_2, fila_3, columna_3, fila_4, columna_4);
+                p.calculoPararelogramo();
+
                 System.out.println();
                 System.out.print("f/c ");
                 for (int f = 0; f < matriz[0].length; f++) {
