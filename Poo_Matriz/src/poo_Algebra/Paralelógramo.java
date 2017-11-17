@@ -10,6 +10,10 @@ public class Paralelógramo {
     private int columna_3;
     private int fila_4;
     private int columna_4;
+    private int absoluto_1;
+    private int absoluto_2;
+    private int absoluto_3;
+    private int absoluto_4;
 
     public Paralelógramo(int fila_1, int columna_1, int fila_2, int columna_2, int fila_3, int columna_3, int fila_4, int columna_4) {
         this.fila_1 = fila_1;
@@ -68,10 +72,10 @@ public class Paralelógramo {
 
         raiz_cuadrada_4 = Math.sqrt(suma_4);
 
-        int absoluto_1 = (int) Math.abs(raiz_cuadrada_1);
-        int absoluto_2 = (int) Math.abs(raiz_cuadrada_2);
-        int absoluto_3 = (int) Math.abs(raiz_cuadrada_3);
-        int absoluto_4 = (int) Math.abs(raiz_cuadrada_4);
+        absoluto_1 = (int) Math.abs(raiz_cuadrada_1);
+        absoluto_2 = (int) Math.abs(raiz_cuadrada_2);
+        absoluto_3 = (int) Math.abs(raiz_cuadrada_3);
+        absoluto_4 = (int) Math.abs(raiz_cuadrada_4);
 
         System.out.println("Valor del punto 1 y 2: " + absoluto_1);
         System.out.println("Valor del punto 2 y 3: " + absoluto_2);
@@ -83,6 +87,10 @@ public class Paralelógramo {
             System.out.println("Cuadrado");
         }
 
+    }
+    public void perimetro(){
+        int perimetro =  absoluto_1 + absoluto_2 + absoluto_3 + absoluto_4;
+        System.out.println("Perimetro de su figura: "+perimetro);
     }
 
     public int getFila_1() {

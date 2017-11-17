@@ -5,7 +5,13 @@ public class Triangulo {
     private int fil_1, fil_2;
     private int colum_1, colum_2;
     private int fil_3, colum_3;
-
+    private int absoluto_1;
+    private int absoluto_2;
+    private int absoluto_3;
+    private int dividir = 0;
+    private int vector1;
+    private int vector2;
+    
     public Triangulo(int fil_1, int fil_2, int colum_1, int colum_2, int fil_3, int colum_3) {
         this.fil_1 = fil_1;
         this.fil_2 = fil_2;
@@ -14,11 +20,15 @@ public class Triangulo {
         this.colum_2 = colum_2;
         this.colum_3 = colum_3;
     }
-    
+    public Triangulo(int vector1, int vector2){
+        this.vector1 = vector1;
+        this.vector2 = vector2;
+    }
+
     public void calculoTriangulo() {
         // Calculo de las figuras
         double resta_1, resta_2, suma_1;
-        double multi_1, multi_2,raiz_cuadrada = 0;
+        double multi_1, multi_2, raiz_cuadrada = 0;
 
         resta_1 = fil_1 - fil_2;
         resta_2 = colum_1 - colum_2;
@@ -53,26 +63,24 @@ public class Triangulo {
         mul_2 = resta * resta;
 
         su_1 = mu_1 + mu_2;
-        raiz = Math.sqrt(su_1); 
-        
-        
-        
-        int absoluto_1 = (int) Math.abs(raiz_cuadrada);
-        int absoluto_2 = (int) Math.abs(raiz_cuad);
-        int absoluto_3 = (int) Math.abs(raiz);
-        
-        double resta_0_1 = colum_2 - colum_1; 
+        raiz = Math.sqrt(su_1);
+
+        absoluto_1 = (int) Math.abs(raiz_cuadrada);
+        absoluto_2 = (int) Math.abs(raiz_cuad);
+        absoluto_3 = (int) Math.abs(raiz);
+
+        double resta_0_1 = colum_2 - colum_1;
         double resta_1_0 = fil_2 - fil_1;
         double div = resta_0_1 / resta_1_0;
-        
-        double resta_2_2 = colum_3 - colum_2; 
+
+        double resta_2_2 = colum_3 - colum_2;
         double resta_2_0 = fil_3 - fil_2;
         double div_2 = resta_2_2 / resta_2_0;
-        
-        double resta_3_3 = colum_3 - colum_1; 
+
+        double resta_3_3 = colum_3 - colum_1;
         double resta_3 = fil_3 - fil_1;
         double div_3 = resta_3_3 / resta_3;
-        
+
         int resultado = (int) Math.abs(div);
         int resultado_1 = (int) Math.abs(div_2);
         int resultado_2 = (int) Math.abs(div_3);
@@ -80,13 +88,12 @@ public class Triangulo {
         System.out.println("Valor del punto 1 y 2: " + absoluto_1);
         System.out.println("Valor del punto 2 y 3: " + absoluto_2);
         System.out.println("Valor del punto 3 y 1: " + absoluto_3);
-        System.out.println(resultado);
-        System.out.println(resultado_1);
-        System.out.println(resultado_2);
+        
+
         if (absoluto_1 == absoluto_2 && absoluto_2 == absoluto_3) {
             System.out.println();
             System.out.println("Equilatero");
-        
+
         } else if (absoluto_1 == absoluto_2 || absoluto_2 == absoluto_3 || absoluto_1 == absoluto_3) {
             System.out.println();
             System.out.println("Isosceles");
@@ -94,10 +101,20 @@ public class Triangulo {
         } else if (absoluto_1 != absoluto_2 && absoluto_2 != absoluto_3 && absoluto_1 != absoluto_3) {
             System.out.println();
             System.out.println("Escaleno");
-        
+
         }
+        
+        
+        
+        
     }
 
+    public void perimetro() {
+        int perimetro = absoluto_1 + absoluto_2 + absoluto_3;
+        
+        System.out.println("Perimetro de su figura: " + perimetro);
+    }
+    
     public void setFil_1(int fil_1) {
         this.fil_1 = fil_1;
     }

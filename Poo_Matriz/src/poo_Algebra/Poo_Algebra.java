@@ -55,19 +55,19 @@ public class Poo_Algebra {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = " -";
+                matriz[i][j] = "-";
 
             }
         }
-        System.out.print("f/c ");
+        System.out.print("  ");
         for (int f = 0; f < matriz[0].length; f++) {
 
             // if dejar de poner 0
             if (f >= 10) {
-                System.out.print(f + "  ");
+                System.out.print(f + " ");
             } else {
                 System.out.print(0);
-                System.out.print(f + "  ");
+                System.out.print(f + " ");
             }
         }
         System.out.println(); // enter
@@ -147,7 +147,7 @@ public class Poo_Algebra {
                         fil_1 = Integer.parseInt(fila_1);
                         colum_1 = Integer.parseInt(columna_1);
 
-                        matriz[fil_1][colum_1] = " X";
+                        matriz[fil_1][colum_1] = "x";
                         break;
 
                     } catch (Exception e) {
@@ -167,7 +167,7 @@ public class Poo_Algebra {
                         fil_2 = Integer.parseInt(fila_2);
                         colum_2 = Integer.parseInt(columna_2);
 
-                        matriz[fil_2][colum_2] = " X";
+                        matriz[fil_2][colum_2] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -187,7 +187,7 @@ public class Poo_Algebra {
                         fil_3 = Integer.parseInt(fila_3);
                         colum_3 = Integer.parseInt(columna_3);
 
-                        matriz[fil_3][colum_3] = " X";
+                        matriz[fil_3][colum_3] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -195,15 +195,16 @@ public class Poo_Algebra {
                 }
                 Triangulo t = new Triangulo(fil_1, fil_2, colum_1, colum_2, fil_3, colum_3);
                 t.calculoTriangulo();
+                t.perimetro();
 
                 System.out.println();
-                System.out.print("f/c ");
+                System.out.print("  ");
                 for (int f = 0; f < matriz[0].length; f++) {
                     if (f >= 10) {
-                        System.out.print(f + "  ");
+                        System.out.print(f + " ");
                     } else {
                         System.out.print(0);
-                        System.out.print(f + "  ");
+                        System.out.print(f + " ");
                     }
                 }
                 System.out.println();
@@ -220,6 +221,63 @@ public class Poo_Algebra {
                     System.out.println();
 
                 }
+                System.out.printf("=============");
+                System.out.printf(" Ingrese vector de traslacion  ");
+                System.out.printf("=============");
+                System.out.println("");
+                String Vec = leer.nextLine();
+                String[] vector = Vec.split(",");
+
+                String v1 = vector[0];
+                String v2 = vector[1];
+
+                int vector1 = Integer.parseInt(v1);
+                int vector2 = Integer.parseInt(v2);
+
+                int v_1 = vector1 + fil_1;
+                int v_2 = vector2 + colum_1;
+                matriz[v_1][v_2] = "x";
+
+                int v_3 = vector1 + fil_2;
+                int v_4 = vector2 + colum_2;
+                matriz[v_3][v_4] = "x";
+
+                int v_5 = vector1 + fil_3;
+                int v_6 = vector2 + colum_3;
+                matriz[v_5][v_6] = "x";
+                
+                if (true) {
+                    matriz[fil_1][colum_1] = "-";
+                    matriz[fil_2][colum_2] = "-";
+                    matriz[fil_3][colum_3] = "-";
+                }
+                System.out.println();
+                System.out.print("  ");
+                for (int f = 0; f < matriz[0].length; f++) {
+                    if (f >= 10) {
+                        System.out.print(f + " ");
+                    } else {
+                        System.out.print(0);
+                        System.out.print(f + " ");
+                    }
+                }
+                System.out.println();
+                for (int f = 0; f < matriz.length; f++) {
+                    if (f >= 10) {
+                        System.out.print(f);
+                    } else {
+                        System.out.print(0);
+                        System.out.print(f);
+                    }
+                    for (int c = 0; c < matriz[f].length; c++) {
+                        System.out.print(" " + matriz[f][c] + " ");
+                    }
+                    System.out.println();
+                    
+                }
+                System.out.println("punto 1: "+v_1+","+v_2);
+                System.out.println("punto 2: "+v_3+","+v_4);
+                System.out.println("punto 3: "+v_5+","+v_6);
 
             } else if (op == 4) {
                 while (true) {
@@ -234,7 +292,7 @@ public class Poo_Algebra {
                         fi_1 = Integer.parseInt(f_1);
                         co_1 = Integer.parseInt(c_1);
 
-                        matriz[fi_1][co_1] = " X";
+                        matriz[fi_1][co_1] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -252,7 +310,7 @@ public class Poo_Algebra {
                         fi_2 = Integer.parseInt(f_2);
                         co_2 = Integer.parseInt(c_2);
 
-                        matriz[fi_2][co_2] = " X";
+                        matriz[fi_2][co_2] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -270,7 +328,7 @@ public class Poo_Algebra {
                         fi_3 = Integer.parseInt(f_3);
                         co_3 = Integer.parseInt(c_3);
 
-                        matriz[fi_3][co_3] = " X";
+                        matriz[fi_3][co_3] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -288,7 +346,7 @@ public class Poo_Algebra {
                         fi_4 = Integer.parseInt(f_4);
                         co_4 = Integer.parseInt(c_4);
 
-                        matriz[fi_4][co_4] = " X";
+                        matriz[fi_4][co_4] = "x";
                         break;
                     } catch (Exception e) {
                         System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
@@ -297,15 +355,16 @@ public class Poo_Algebra {
                 }
                 Paralelógramo p = new Paralelógramo(fi_1, fi_2, co_1, co_2, fi_3, co_3, fi_4, co_4);
                 p.calculoPararelogramo();
-
+                p.perimetro();
+                
                 System.out.println();
-                System.out.print("f/c ");
+                System.out.print("  ");
                 for (int f = 0; f < matriz[0].length; f++) {
                     if (f >= 10) {
-                        System.out.print(f + "  ");
+                        System.out.print(f + " ");
                     } else {
                         System.out.print(0);
-                        System.out.print(f + "  ");
+                        System.out.print(f + " ");
                     }
                 }
                 System.out.println();
@@ -322,6 +381,70 @@ public class Poo_Algebra {
                     }
                     System.out.println();
                 }
+                System.out.printf("=============");
+                System.out.printf(" Ingrese vector de traslacion  ");
+                System.out.printf("=============");
+                System.out.println("");
+                String Vec = leer.nextLine();
+                String[] vector = Vec.split(",");
+
+                String v1 = vector[0];
+                String v2 = vector[1];
+
+                int vector1 = Integer.parseInt(v1);
+                int vector2 = Integer.parseInt(v2);
+
+                int v_1 = vector1 + fi_1;
+                int v_2 = vector2 + co_1;
+                matriz[v_1][v_2] = "x";
+
+                int v_3 = vector1 + fi_2;
+                int v_4 = vector2 + co_2;
+                matriz[v_3][v_4] = "x";
+
+                int v_5 = vector1 + fi_3;
+                int v_6 = vector2 + co_3;
+                matriz[v_5][v_6] = "x";
+                
+                int v_7 = vector1 + fi_4;
+                int v_8 = vector2 + co_4;
+                matriz[v_7][v_8] = "x";
+                
+                if (true) {
+                    matriz[fi_1][co_1] = "-";
+                    matriz[fi_2][co_2] = "-";
+                    matriz[fi_3][co_3] = "-";
+                    matriz[fi_4][co_4] = "-";
+                    
+                }
+                System.out.println();
+                System.out.print("  ");
+                for (int f = 0; f < matriz[0].length; f++) {
+                    if (f >= 10) {
+                        System.out.print(f + " ");
+                    } else {
+                        System.out.print(0);
+                        System.out.print(f + " ");
+                    }
+                }
+                System.out.println();
+                for (int f = 0; f < matriz.length; f++) {
+                    if (f >= 10) {
+                        System.out.print(f);
+                    } else {
+                        System.out.print(0);
+                        System.out.print(f);
+                    }
+                    for (int c = 0; c < matriz[f].length; c++) {
+                        System.out.print(" " + matriz[f][c] + " ");
+                    }
+                    System.out.println();
+                    
+                }
+                System.out.println("punto 1: "+v_1+","+v_2);
+                System.out.println("punto 2: "+v_3+","+v_4);
+                System.out.println("punto 3: "+v_5+","+v_6);
+                System.out.println("punto 4: "+v_7+","+v_8);
 
             }
 
