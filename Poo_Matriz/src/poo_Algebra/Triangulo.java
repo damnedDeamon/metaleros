@@ -115,6 +115,7 @@ public class Triangulo {
         System.out.println("Perimetro de su figura: " + perimetro);
     }
     
+    
     public void setFil_1(int fil_1) {
         this.fil_1 = fil_1;
     }

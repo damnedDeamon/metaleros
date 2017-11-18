@@ -92,6 +92,17 @@ public class Paralelógramo {
         int perimetro =  absoluto_1 + absoluto_2 + absoluto_3 + absoluto_4;
         System.out.println("Perimetro de su figura: "+perimetro);
     }
+    
+    public void diagonal(){
+        int a = (int) Math.pow(absoluto_1, 2);
+        int b = (int) Math.pow(absoluto_2, 2);
+        
+        int suma = a + b;
+        
+        float diagonal = (float) Math.sqrt(suma);
+        
+        System.out.println("Diagonal de su figura es de: "+diagonal);
+    }
 
     public int getFila_1() {
         return fila_1;
