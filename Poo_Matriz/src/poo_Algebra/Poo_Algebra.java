@@ -236,16 +236,19 @@ public class Poo_Algebra {
 
                 int v_1 = vector1 + fil_1;
                 int v_2 = vector2 + colum_1;
+
                 matriz[v_1][v_2] = "x";
 
                 int v_3 = vector1 + fil_2;
                 int v_4 = vector2 + colum_2;
+
                 matriz[v_3][v_4] = "x";
 
                 int v_5 = vector1 + fil_3;
                 int v_6 = vector2 + colum_3;
+
                 matriz[v_5][v_6] = "x";
-                
+
                 if (true) {
                     matriz[fil_1][colum_1] = "-";
                     matriz[fil_2][colum_2] = "-";
@@ -273,11 +276,11 @@ public class Poo_Algebra {
                         System.out.print(" " + matriz[f][c] + " ");
                     }
                     System.out.println();
-                    
+
                 }
-                System.out.println("punto 1: "+v_1+","+v_2);
-                System.out.println("punto 2: "+v_3+","+v_4);
-                System.out.println("punto 3: "+v_5+","+v_6);
+                System.out.println("punto 1: " + v_1 + "," + v_2);
+                System.out.println("punto 2: " + v_3 + "," + v_4);
+                System.out.println("punto 3: " + v_5 + "," + v_6);
 
             } else if (op == 4) {
                 while (true) {
@@ -356,7 +359,8 @@ public class Poo_Algebra {
                 Paralelógramo p = new Paralelógramo(fi_1, fi_2, co_1, co_2, fi_3, co_3, fi_4, co_4);
                 p.calculoPararelogramo();
                 p.perimetro();
-                
+                p.diagonal();
+
                 System.out.println();
                 System.out.print("  ");
                 for (int f = 0; f < matriz[0].length; f++) {
@@ -405,17 +409,17 @@ public class Poo_Algebra {
                 int v_5 = vector1 + fi_3;
                 int v_6 = vector2 + co_3;
                 matriz[v_5][v_6] = "x";
-                
+
                 int v_7 = vector1 + fi_4;
                 int v_8 = vector2 + co_4;
                 matriz[v_7][v_8] = "x";
-                
+
                 if (true) {
                     matriz[fi_1][co_1] = "-";
                     matriz[fi_2][co_2] = "-";
                     matriz[fi_3][co_3] = "-";
                     matriz[fi_4][co_4] = "-";
-                    
+
                 }
                 System.out.println();
                 System.out.print("  ");
@@ -439,13 +443,14 @@ public class Poo_Algebra {
                         System.out.print(" " + matriz[f][c] + " ");
                     }
                     System.out.println();
-                    
-                }
-                System.out.println("punto 1: "+v_1+","+v_2);
-                System.out.println("punto 2: "+v_3+","+v_4);
-                System.out.println("punto 3: "+v_5+","+v_6);
-                System.out.println("punto 4: "+v_7+","+v_8);
 
+                }
+                System.out.println("punto 1: " + v_1 + "," + v_2);
+                System.out.println("punto 2: " + v_3 + "," + v_4);
+                System.out.println("punto 3: " + v_5 + "," + v_6);
+                System.out.println("punto 4: " + v_7 + "," + v_8);
+                
+                
             }
 
         }
