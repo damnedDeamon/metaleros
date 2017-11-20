@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class Poo_Algebra {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         /* Se pide:
         • Desarrollar un sistema en Java que permita lo siguiente:
         ◦ Ingresar tres o cuatro puntos (Coordenada x,y).
@@ -24,7 +24,6 @@ public class Poo_Algebra {
             entregar estadísticas, tales como:
         ▪ Cantidad de figuras ingresadas, mostrando un contador por cada una de ellas.
          */
-
         int opcion = 0;
         int op;
         int cont = 0;
@@ -55,7 +54,7 @@ public class Poo_Algebra {
 
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = "-";
+                matriz[i][j] = ".";
 
             }
         }
@@ -114,13 +113,13 @@ public class Poo_Algebra {
             if (opcion == cont) {
                 break;
             }
+            cont++;
             System.out.println("============================================");
             System.out.println("Reglas ");
             System.out.println("Solamente puede ingresar 3 o 4 coordenadas");
             System.out.println("============================================");
             while (true) {
                 try {
-                    cont++;
                     System.out.print("Cuantos puntos desea ingresar: ");
                     op = Integer.parseInt(leer.nextLine());
                     if (op == 3 || op == 4) {
@@ -221,6 +220,11 @@ public class Poo_Algebra {
                     System.out.println();
 
                 }
+                if (true) {
+                    matriz[fil_1][colum_1] = "-";
+                    matriz[fil_2][colum_2] = "-";
+                    matriz[fil_3][colum_3] = "-";
+                }
                 System.out.printf("=============");
                 System.out.printf(" Ingrese vector de traslacion  ");
                 System.out.printf("=============");
@@ -249,11 +253,39 @@ public class Poo_Algebra {
 
                 matriz[v_5][v_6] = "x";
 
-                if (true) {
-                    matriz[fil_1][colum_1] = "-";
-                    matriz[fil_2][colum_2] = "-";
-                    matriz[fil_3][colum_3] = "-";
+                /**
+                 * Nueva idea ingresada. 
+                 * Mostrar la posicion de la traslacion.
+                 */
+                if (vector1 <= -1 & vector2 <= -1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("superior hisquierda");
+                    Thread.sleep(5000);
+
+                } else if (vector1 >= 1 & vector2 >= 1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("inferior derecha");
+                    Thread.sleep(5000);
+                    
+                } else if (vector1 <= -1 & vector2 <= 1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("superior derecha");
+                    Thread.sleep(5000);
+                    
+                } else if (vector1 <= 1 & vector2 <= -1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("inferior hisquierda");
+                    Thread.sleep(5000);
+
+                } else if (vector1 == 0 & vector2 == 0) {
+                    System.out.println("La figura no sera trasladada");
+                    Thread.sleep(3000);
                 }
+
                 System.out.println();
                 System.out.print("  ");
                 for (int f = 0; f < matriz[0].length; f++) {
@@ -278,6 +310,8 @@ public class Poo_Algebra {
                     System.out.println();
 
                 }
+                System.out.println("===========================");
+                System.out.println("Nuevos puntos de su figura");
                 System.out.println("punto 1: " + v_1 + "," + v_2);
                 System.out.println("punto 2: " + v_3 + "," + v_4);
                 System.out.println("punto 3: " + v_5 + "," + v_6);
@@ -285,7 +319,7 @@ public class Poo_Algebra {
             } else if (op == 4) {
                 while (true) {
                     try {
-                        System.out.print("Ingrese fila  y columna 1: ");
+                        System.out.print("Ingrese fila y columna 1: ");
                         String coor_1 = leer.nextLine();
                         String[] pos_1 = coor_1.split(",");
 
@@ -359,7 +393,6 @@ public class Poo_Algebra {
                 Paralelógramo p = new Paralelógramo(fi_1, fi_2, co_1, co_2, fi_3, co_3, fi_4, co_4);
                 p.calculoPararelogramo();
                 p.perimetro();
-                p.diagonal();
 
                 System.out.println();
                 System.out.print("  ");
@@ -384,6 +417,13 @@ public class Poo_Algebra {
                         System.out.print(" " + matriz[f][c] + " ");
                     }
                     System.out.println();
+                }
+                if (true) {
+                    matriz[fi_1][co_1] = "-";
+                    matriz[fi_2][co_2] = "-";
+                    matriz[fi_3][co_3] = "-";
+                    matriz[fi_4][co_4] = "-";
+
                 }
                 System.out.printf("=============");
                 System.out.printf(" Ingrese vector de traslacion  ");
@@ -414,13 +454,39 @@ public class Poo_Algebra {
                 int v_8 = vector2 + co_4;
                 matriz[v_7][v_8] = "x";
 
-                if (true) {
-                    matriz[fi_1][co_1] = "-";
-                    matriz[fi_2][co_2] = "-";
-                    matriz[fi_3][co_3] = "-";
-                    matriz[fi_4][co_4] = "-";
+                /**
+                 * Nueva idea ingresada. 
+                 * Mostrar la posicion de la traslacion.
+                 */
+                if (vector1 <= -1 & vector2 <= -1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("superior hisquierda");
+                    Thread.sleep(5000);
 
+                } else if (vector1 >= 1 & vector2 >= 1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("inferior derecha");
+                    Thread.sleep(5000);
+                    
+                } else if (vector1 <= -1 & vector2 <= 1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("superior derecha");
+                    Thread.sleep(5000);
+                    
+                } else if (vector1 <= 1 & vector2 <= -1) {
+                    System.out.println("La figura sera ");
+                    System.out.println("trasladada a la posicion ");
+                    System.out.println("inferior hisquierda");
+                    Thread.sleep(5000);
+
+                } else if (vector1 == 0 & vector2 == 0) {
+                    System.out.println("La figura no sera trasladada");
+                    Thread.sleep(3000);
                 }
+                
                 System.out.println();
                 System.out.print("  ");
                 for (int f = 0; f < matriz[0].length; f++) {
@@ -445,12 +511,13 @@ public class Poo_Algebra {
                     System.out.println();
 
                 }
+                System.out.println("===========================");
+                System.out.println("Nuevos puntos de su figura");
                 System.out.println("punto 1: " + v_1 + "," + v_2);
                 System.out.println("punto 2: " + v_3 + "," + v_4);
                 System.out.println("punto 3: " + v_5 + "," + v_6);
                 System.out.println("punto 4: " + v_7 + "," + v_8);
-                
-                
+
             }
 
         }

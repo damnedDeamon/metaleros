@@ -14,7 +14,9 @@ public class Paralelógramo {
     private int absoluto_2;
     private int absoluto_3;
     private int absoluto_4;
-
+    private int absoluto_5;
+    private int absoluto_6;
+    
     public Paralelógramo(int fila_1, int columna_1, int fila_2, int columna_2, int fila_3, int columna_3, int fila_4, int columna_4) {
         this.fila_1 = fila_1;
         this.columna_1 = columna_1;
@@ -31,7 +33,10 @@ public class Paralelógramo {
         double suma_1, suma_2, suma_3, suma_4;
         double multi_1, multi_2, multi_3, multi_4, multi_5, multi_6, multi_7, multi_8;
         double raiz_cuadrada_1 = 0, raiz_cuadrada_2 = 0, raiz_cuadrada_3 = 0, raiz_cuadrada_4 = 0;
-
+        
+        /**
+         * Calculo del punto 1
+         */
         resta_1 = fila_1 - fila_2;
         resta_2 = columna_1 - columna_2;
 
@@ -41,7 +46,10 @@ public class Paralelógramo {
         suma_1 = multi_1 + multi_2;
 
         raiz_cuadrada_1 = Math.sqrt(suma_1);
-
+        
+        /**
+         * Calculo del punto 2
+         */
         resta_3 = fila_2 - fila_3;
         resta_4 = columna_2 - columna_3;
 
@@ -51,7 +59,10 @@ public class Paralelógramo {
         suma_2 = multi_3 + multi_4;
 
         raiz_cuadrada_2 = Math.sqrt(suma_2);
-
+        
+        /**
+         * Calculo del punto 3
+         */
         resta_5 = fila_3 - fila_4;
         resta_6 = columna_3 - columna_4;
 
@@ -61,7 +72,10 @@ public class Paralelógramo {
         suma_3 = multi_5 + multi_6;
 
         raiz_cuadrada_3 = Math.sqrt(suma_3);
-
+        
+        /**
+         * Calculo del punto 4
+         */
         resta_7 = fila_4 - fila_1;
         resta_8 = columna_4 - columna_1;
 
@@ -71,20 +85,41 @@ public class Paralelógramo {
         suma_4 = multi_7 + multi_8;
 
         raiz_cuadrada_4 = Math.sqrt(suma_4);
-
+        /**
+         * Modificar la variable double a int 
+         */
         absoluto_1 = (int) Math.abs(raiz_cuadrada_1);
         absoluto_2 = (int) Math.abs(raiz_cuadrada_2);
         absoluto_3 = (int) Math.abs(raiz_cuadrada_3);
         absoluto_4 = (int) Math.abs(raiz_cuadrada_4);
+        
+        System.out.println("Valor del punto 1 y 2: " + raiz_cuadrada_1);
+        System.out.println("Valor del punto 2 y 3: " + raiz_cuadrada_2);
+        System.out.println("Valor del punto 3 y 4: " + raiz_cuadrada_3);
+        System.out.println("Valor del punto 4 y 1: " + raiz_cuadrada_4);
 
-        System.out.println("Valor del punto 1 y 2: " + absoluto_1);
-        System.out.println("Valor del punto 2 y 3: " + absoluto_2);
-        System.out.println("Valor del punto 3 y 4: " + absoluto_3);
-        System.out.println("Valor del punto 4 y 1: " + absoluto_4);
-
-        if (absoluto_1 == absoluto_2 && absoluto_2 == absoluto_3 && absoluto_3 == absoluto_4 && absoluto_4 == absoluto_1) {
+        if (absoluto_1 == absoluto_2 &
+            absoluto_2 == absoluto_3 &
+            absoluto_3 == absoluto_4 & 
+            absoluto_4 == absoluto_1 &
+            fila_1 == fila_2 &
+            fila_3 == fila_4 &
+            columna_1 != columna_2 &
+            columna_3 != columna_4) {
+            
             System.out.println();
             System.out.println("Cuadrado");
+        
+        }else if(absoluto_1 == absoluto_2 &
+                 absoluto_5 == absoluto_6 &
+                 fila_1 < fila_2 &
+                 columna_1 > columna_2 &
+                 fila_3 > fila_4 &
+                 columna_3 < columna_4 ){
+            
+                 System.out.println();
+                 System.out.println("Rombo");
+        
         }
 
     }
@@ -93,16 +128,7 @@ public class Paralelógramo {
         System.out.println("Perimetro de su figura: "+perimetro);
     }
     
-    public void diagonal(){
-        int a = (int) Math.pow(absoluto_1, 2);
-        int b = (int) Math.pow(absoluto_2, 2);
-        
-        int suma = a + b;
-        
-        float diagonal = (float) Math.sqrt(suma);
-        
-        System.out.println("Diagonal de su figura es de: "+diagonal);
-    }
+    
 
     public int getFila_1() {
         return fila_1;
