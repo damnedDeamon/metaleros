@@ -46,54 +46,53 @@ public class Poo_Algebra {
 
         Scanner leer;
         leer = new Scanner(System.in);
-        System.out.println("====================================");
-        System.out.println("  BIENVENIDO AL SISTEMA DE FIGURAS");
-        System.out.println("====================================");
+        while (true) {
+            System.out.println("============================================");
+            System.out.println("     BIENVENIDO AL SISTEMA DE FIGURAS");
+            System.out.println("============================================");
 
-        String[][] matriz = new String[20][20];
+            String[][] matriz = new String[20][20];
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                matriz[i][j] = ".";
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length; j++) {
+                    matriz[i][j] = ".";
 
+                }
             }
-        }
-        System.out.print("  ");
-        for (int f = 0; f < matriz[0].length; f++) {
+            System.out.print("  ");
+            for (int f = 0; f < matriz[0].length; f++) {
 
-            // if dejar de poner 0
-            if (f >= 10) {
-                System.out.print(f + " ");
-            } else {
-                System.out.print(0);
-                System.out.print(f + " ");
-            }
-        }
-        System.out.println(); // enter
-
-        // ciclo para las filas de numeros
-        for (int f = 0; f < matriz.length; f++) {
-
-            // if dejar de poner 0 y mostrar la columna de numeros
-            if (f >= 10) {
-                System.out.print(f);
-            } else {
-                System.out.print(0);
-                System.out.print(f);
-            }
-            // ciclo para las filas de numeros
-            for (int c = 0; c < matriz[f].length; c++) {
-                System.out.print(" " + matriz[f][c] + " ");
+                // if dejar de poner 0
+                if (f >= 10) {
+                    System.out.print(f + " ");
+                } else {
+                    System.out.print(0);
+                    System.out.print(f + " ");
+                }
             }
             System.out.println(); // enter
-        }
-        while (true) {
 
-            System.out.println("====================================");
+            // ciclo para las filas de numeros
+            for (int f = 0; f < matriz.length; f++) {
+
+                // if dejar de poner 0 y mostrar la columna de numeros
+                if (f >= 10) {
+                    System.out.print(f);
+                } else {
+                    System.out.print(0);
+                    System.out.print(f);
+                }
+                // ciclo para las filas de numeros
+                for (int c = 0; c < matriz[f].length; c++) {
+                    System.out.print(" " + matriz[f][c] + " ");
+                }
+                System.out.println(); // enter
+            }
+            System.out.println("============================================");
             System.out.println("Segun la matriz que muestra el sistema usted");
             System.out.println("debe ingresar los puntos de su figura.");
             System.out.println("Ejemplo: 0,0 - 4,0 - 0,4 - 4,4");
-            System.out.println("====================================");
+            System.out.println("============================================");
             while (true) {
                 try {
                     System.out.print("Cuantas figuras desea ingresar: ");
@@ -257,7 +256,7 @@ public class Poo_Algebra {
                     if (vector1 <= -1 & vector2 <= -1) {
                         System.out.println("La figura sera ");
                         System.out.println("trasladada a la posicion ");
-                        System.out.println("superior hisquierda");
+                        System.out.println("superior izquierda");
                         Thread.sleep(5000);
 
                     } else if (vector1 >= 1 & vector2 >= 1) {
@@ -275,7 +274,7 @@ public class Poo_Algebra {
                     } else if (vector1 <= 1 & vector2 <= -1) {
                         System.out.println("La figura sera ");
                         System.out.println("trasladada a la posicion ");
-                        System.out.println("inferior hisquierda");
+                        System.out.println("inferior izquierda");
                         Thread.sleep(5000);
 
                     } else if (vector1 == 0 & vector2 == 0) {
@@ -307,7 +306,7 @@ public class Poo_Algebra {
                         System.out.println();
 
                     }
-                    System.out.println("===========================");
+                    System.out.println("============================================");
                     System.out.println("Nuevos puntos de su figura");
                     System.out.println("punto 1: " + v_1 + "," + v_2);
                     System.out.println("punto 2: " + v_3 + "," + v_4);
@@ -316,7 +315,6 @@ public class Poo_Algebra {
                     matriz[v_1][v_2] = ".";
                     matriz[v_3][v_4] = ".";
                     matriz[v_5][v_6] = ".";
-                    
 
                 } else if (op == 4) {
                     while (true) {
@@ -390,6 +388,7 @@ public class Poo_Algebra {
                         } catch (Exception e) {
                             System.err.println("Ingresar solo cordenadas positivas ej: (3,4)");
                         }
+                        
 
                     }
                     Paralelógramo p = new Paralelógramo(fi_1, fi_2, co_1, co_2, fi_3, co_3, fi_4, co_4);
@@ -463,7 +462,7 @@ public class Poo_Algebra {
                     if (vector1 <= -1 & vector2 <= -1) {
                         System.out.println("La figura sera ");
                         System.out.println("trasladada a la posicion ");
-                        System.out.println("superior hisquierda");
+                        System.out.println("superior izquierda");
                         Thread.sleep(5000);
 
                     } else if (vector1 >= 1 & vector2 >= 1) {
@@ -481,7 +480,7 @@ public class Poo_Algebra {
                     } else if (vector1 <= 1 & vector2 <= -1) {
                         System.out.println("La figura sera ");
                         System.out.println("trasladada a la posicion ");
-                        System.out.println("inferior hisquierda");
+                        System.out.println("inferior izquierda");
                         Thread.sleep(5000);
 
                     } else if (vector1 == 0 & vector2 == 0) {
@@ -513,7 +512,7 @@ public class Poo_Algebra {
                         System.out.println();
 
                     }
-                    System.out.println("===========================");
+                    System.out.println("============================================");
                     System.out.println("Nuevos puntos de su figura");
                     System.out.println("punto 1: " + v_1 + "," + v_2);
                     System.out.println("punto 2: " + v_3 + "," + v_4);
@@ -534,6 +533,7 @@ public class Poo_Algebra {
             int num = Integer.parseInt(leer.nextLine());
 
             if (num == 2) {
+                System.out.println("Cantidad de figuras ingresadas: "+opcion);
                 break;
             }
         }
