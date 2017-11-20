@@ -14,7 +14,7 @@ public class Paralelógramo {
     private int absoluto_2;
     private int absoluto_3;
     private int absoluto_4;
-    
+
     public Paralelógramo(int fila_1, int columna_1, int fila_2, int columna_2, int fila_3, int columna_3, int fila_4, int columna_4) {
         this.fila_1 = fila_1;
         this.columna_1 = columna_1;
@@ -31,7 +31,7 @@ public class Paralelógramo {
         double suma_1, suma_2, suma_3, suma_4;
         double multi_1, multi_2, multi_3, multi_4, multi_5, multi_6, multi_7, multi_8;
         double raiz_cuadrada_1 = 0, raiz_cuadrada_2 = 0, raiz_cuadrada_3 = 0, raiz_cuadrada_4 = 0;
-        
+
         /**
          * Calculo del punto 1
          */
@@ -44,7 +44,7 @@ public class Paralelógramo {
         suma_1 = multi_1 + multi_2;
 
         raiz_cuadrada_1 = Math.sqrt(suma_1);
-        
+
         /**
          * Calculo del punto 2
          */
@@ -57,7 +57,7 @@ public class Paralelógramo {
         suma_2 = multi_3 + multi_4;
 
         raiz_cuadrada_2 = Math.sqrt(suma_2);
-        
+
         /**
          * Calculo del punto 3
          */
@@ -70,7 +70,7 @@ public class Paralelógramo {
         suma_3 = multi_5 + multi_6;
 
         raiz_cuadrada_3 = Math.sqrt(suma_3);
-        
+
         /**
          * Calculo del punto 4
          */
@@ -84,48 +84,48 @@ public class Paralelógramo {
 
         raiz_cuadrada_4 = Math.sqrt(suma_4);
         /**
-         * Modificar la variable double a int 
+         * Modificar la variable double a int
          */
         absoluto_1 = (int) Math.abs(raiz_cuadrada_1);
         absoluto_2 = (int) Math.abs(raiz_cuadrada_2);
         absoluto_3 = (int) Math.abs(raiz_cuadrada_3);
         absoluto_4 = (int) Math.abs(raiz_cuadrada_4);
-        
+        System.out.println("============================================");
         System.out.println("Valor del punto 1 y 2: " + absoluto_1);
         System.out.println("Valor del punto 2 y 3: " + absoluto_2);
         System.out.println("Valor del punto 3 y 4: " + absoluto_3);
         System.out.println("Valor del punto 4 y 1: " + absoluto_4);
+        System.out.println("============================================");
 
-        if (absoluto_1 == absoluto_2 &
-            absoluto_2 == absoluto_3 &
-            absoluto_3 == absoluto_4 & 
-            absoluto_4 == absoluto_1 &
-            fila_1 == fila_2 &
-            fila_3 == fila_4 &
-            columna_1 != columna_2 &
-            columna_3 != columna_4) {
-            
-            System.out.println();
+        if (absoluto_1 == absoluto_2
+                & absoluto_2 == absoluto_3
+                & absoluto_3 == absoluto_4
+                & absoluto_4 == absoluto_1
+                & fila_1 == fila_2
+                & fila_3 == fila_4
+                & columna_1 != columna_2
+                & columna_3 != columna_4) {
+
             System.out.println("Cuadrado");
-        
-        }else if(absoluto_1 == absoluto_2 &
-                 fila_1 < fila_2 &
-                 columna_1 > columna_2 &
-                 fila_3 > fila_4 &
-                 columna_3 < columna_4 ){
-            
-                 System.out.println();
-                 System.out.println("Rombo");
-        
+            System.out.println("============================================");
+
+        } else if (absoluto_1 == absoluto_2
+                & fila_1 < fila_2
+                & columna_1 > columna_2
+                & fila_3 > fila_4
+                & columna_3 < columna_4) {
+
+            System.out.println("Rombo");
+            System.out.println("============================================");
+
         }
 
     }
-    public void perimetro(){
-        int perimetro =  absoluto_1 + absoluto_2 + absoluto_3 + absoluto_4;
-        System.out.println("Perimetro de su figura: "+perimetro);
+
+    public void perimetro() {
+        int perimetro = absoluto_1 + absoluto_2 + absoluto_3 + absoluto_4;
+        System.out.println("Perimetro de su figura: " + perimetro);
     }
-    
-    
 
     public int getFila_1() {
         return fila_1;
